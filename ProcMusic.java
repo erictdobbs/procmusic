@@ -401,11 +401,10 @@ public class ProcMusic extends javax.swing.JFrame {
         
         int noteCount = 0;
         int fineness = 1; // 1=whole, 2=half, 4=quarter, 8=eight
-        while (noteCount < maxNotes) {
+        while (noteCount < minNotes || (noteCount < maxNotes && Math.random() > 0.5) ) {
             for (int ii=0; ii<notes.length; ii+= fineness) {
                 if ((noteCount < maxNotes) & 
-                        Math.random() > syncopation) {//* (Math.log(fineness)/Math.log(2)+1) ) {
-                    //System.out.println(Integer.toString(noteCount) + " " + Integer.toString(maxNotes));
+                        Math.random() > syncopation*syncopation) {//* (Math.log(fineness)/Math.log(2)+1) ) {
                     // This block is more likely with low syncopation
                     // or when generation is still in early stages.
                     
@@ -415,11 +414,12 @@ public class ProcMusic extends javax.swing.JFrame {
                     notes[ii] = randChoice(1,3,5,8);
                     if(ii != 0 & ii < notes.length - 1) {
                         if(notes[ii-1] != -1 & notes[ii+1] != -1) {
-                            int min = notes[ii-1] < notes[ii+1] ? notes[ii-1] : notes[ii+1];
+                            /*int min = notes[ii-1] < notes[ii+1] ? notes[ii-1] : notes[ii+1];
                             int max = notes[ii-1] > notes[ii+1] ? notes[ii-1] : notes[ii+1];
                             if (min > 1) min -= 1;
-                            if (max < 8) max += 1;
-                            notes[ii] = randNum(min, max);
+                            if (max < 8) max += 1;*/
+                            notes[ii] = randNum(Math.min(notes[ii-1],notes[ii+1])-1,
+                                    Math.max(notes[ii-1],notes[ii+1])+1);
                         }
                     }
                     noteCount++;
@@ -606,6 +606,11 @@ public class ProcMusic extends javax.swing.JFrame {
     }
     
     int randNum(int min, int max){
+        if (max > min) {
+            int tmp = max;
+            max = min;
+            min = tmp;
+        }
         return (int)(min + Math.random() * (max-min + 1));
     }
     
