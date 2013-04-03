@@ -39,9 +39,6 @@ public class ProcMusic extends javax.swing.JFrame {
         jSlider1 = new javax.swing.JSlider();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jSlider2 = new javax.swing.JSlider();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jSlider3 = new javax.swing.JSlider();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -55,6 +52,9 @@ public class ProcMusic extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jSlider4 = new javax.swing.JSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,8 +71,9 @@ public class ProcMusic extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,25 +81,13 @@ public class ProcMusic extends javax.swing.JFrame {
             .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jLabel2.setText("Complexity");
+        jLabel2.setText("Granularity");
         jLabel2.setToolTipText("Controls the number of notes in each measure");
 
-        jSlider2.setValue(15);
-        jSlider2.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSlider2StateChanged(evt);
-            }
-        });
-
-        jLabel3.setText("Minimum");
-
-        jLabel4.setText("Maximum");
-
-        jSlider3.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSlider3StateChanged(evt);
-            }
-        });
+        jSlider3.setMaximum(6);
+        jSlider3.setMinimum(1);
+        jSlider3.setToolTipText("");
+        jSlider3.setValue(4);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -106,32 +95,22 @@ public class ProcMusic extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                    .addComponent(jSlider2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
+                    .addComponent(jLabel2)
                     .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel5.setText("Syncopation");
+
+        jSlider5.setValue(40);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -139,8 +118,9 @@ public class ProcMusic extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSlider5, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jSlider5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,6 +186,28 @@ public class ProcMusic extends javax.swing.JFrame {
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
 
+        jLabel6.setText("Density");
+
+        jSlider4.setValue(70);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSlider4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jSlider4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -215,6 +217,9 @@ public class ProcMusic extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,8 +230,10 @@ public class ProcMusic extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -243,27 +250,11 @@ public class ProcMusic extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jSlider3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider3StateChanged
-        // Complexity maximum
-        if (jSlider3.getValue() < jSlider2.getValue()) {
-            // If maximum is less than minimum, push min down
-            jSlider2.setValue(jSlider3.getValue());
-        }
-    }//GEN-LAST:event_jSlider3StateChanged
-
-    private void jSlider2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider2StateChanged
-        // Complexity minimum
-        if (jSlider2.getValue() > jSlider3.getValue()) {
-            // If minimum exceeds maximum, push max up
-            jSlider3.setValue(jSlider2.getValue());
-        }
-    }//GEN-LAST:event_jSlider2StateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -377,7 +368,7 @@ public class ProcMusic extends javax.swing.JFrame {
             if (jCheckBox2.isSelected()) 
                 song += randMeasure(getScale(progression[randNum][i]));
             else
-                song += randMeasureOld(getScale(progression[randNum][i]));
+                song += randMeasurePreGen(getScale(progression[randNum][i]));
             
         }
         return song;
@@ -459,7 +450,7 @@ public class ProcMusic extends javax.swing.JFrame {
             return 1.0 * syncCount / compareCount;
     }
     
-    String randMeasureOld(int[] scale){
+    String randMeasurePreGen(int[] scale){
         String song; 
         int minNoteCount = 9999;
         int maxNoteCount = 0;
@@ -510,7 +501,7 @@ public class ProcMusic extends javax.swing.JFrame {
         }
         // The min and max noteCount based on the sliders
         int sliderMin = (int)( minNoteCount + 
-                jSlider2.getValue()/(100.0/(maxNoteCount - minNoteCount)));
+                jSlider3.getValue()/(100.0/(maxNoteCount - minNoteCount)));
         int sliderMax = (int)( minNoteCount + 
                 jSlider3.getValue()/(100.0/(maxNoteCount - minNoteCount)));
         
@@ -536,7 +527,71 @@ public class ProcMusic extends javax.swing.JFrame {
         return song;
     }
     
-    String randMeasure(int[] scale){
+    String randMeasure(int[] scale) {
+        double syncopation = jSlider5.getValue()/100.0;
+        double density = jSlider4.getValue()/100.0;
+        int granularity = jSlider3.getValue();
+        char[] rhythm = new char[(int)(Math.pow(2, granularity-1))];
+        
+        
+        // First create the actual beat: 0 is a note, - is blank
+        for(int ii=0; ii<rhythm.length; ii++) rhythm[ii]='-';
+        for(int ii=0; ii<rhythm.length-1; ii+=2) {
+            // For each pair of notes, determine where to place notes
+            if(Math.random() < density && Math.random() > syncopation)
+                rhythm[ii] = '0';
+            if(Math.random() < density && Math.random() < syncopation)
+                rhythm[ii+1] = '0';
+        }
+        
+        // Next, locate sets of at least 3 adjacent notes to create runs
+        // like 123 121 321 323 343 345 865 565 878
+        for(int ii=0; ii<rhythm.length - 3; ii++) {
+            if(rhythm[ii]=='0' & rhythm[ii+1]=='0' & rhythm[ii+2]=='0') {
+                int note1 = randChoice(1,3,5,8);
+                int note2 = note1 + randChoice(-1,1);
+                if (note2 == 9) note2 = 7;
+                if (note2 == 0) note2 = 2;
+                int note3 = note2 + randChoice(-1,1);
+                if (note3 == 6) note3 = 5;
+                if (note3 == 7) note3 = 8;
+                rhythm[ii] = Character.forDigit(note1, 10); 
+                rhythm[ii+1] = Character.forDigit(note2, 10); 
+                rhythm[ii+2] = Character.forDigit(note3, 10); 
+            }
+        }
+        
+        // Repeat, but on a scale twice the previous length
+        for(int ii=0; ii<rhythm.length - 5; ii++) {
+            if(rhythm[ii]=='0' & rhythm[ii+2]=='0' & rhythm[ii+4]=='0') {
+                int note1 = randChoice(1,3,5,8);
+                int note2 = note1 + randChoice(-1,1);
+                if (note2 == 9) note2 = 7;
+                if (note2 == 0) note2 = 2;
+                int note3 = note2 + randChoice(-1,1);
+                if (note3 == 6) note3 = 5;
+                if (note3 == 7) note3 = 8;
+                rhythm[ii] = Character.forDigit(note1, 10); 
+                rhythm[ii+2] = Character.forDigit(note2, 10); 
+                rhythm[ii+4] = Character.forDigit(note3, 10); 
+            }
+        }
+        
+        // Then fill in the missing notes
+        for(int ii=0; ii<rhythm.length; ii++) {
+            if(rhythm[ii]=='0') rhythm[ii] = Character.forDigit(randChoice(1,3,5,8), 10); 
+        }
+        
+        String melody = new String(rhythm);
+                
+        jTextArea1.setText(jTextArea1.getText() + melody + "\n");
+        
+        String song = "V0 ";
+        song += quickNote(scale, melody+"|");
+        return song;
+    }
+    
+  /*  String randMeasure1(int[] scale){
         String song; 
         int minNoteCount = 1;
         int maxNoteCount = 8;
@@ -556,7 +611,7 @@ public class ProcMusic extends javax.swing.JFrame {
         song = "V0 ";
         song += quickNote(scale, chosenRhythm);
         return song;
-    }
+    }*/
     
     int randChoice(int ... choices) {
         return choices[randNum(0,choices.length-1)];
@@ -665,20 +720,20 @@ public class ProcMusic extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSlider jSlider1;
-    private javax.swing.JSlider jSlider2;
     private javax.swing.JSlider jSlider3;
+    private javax.swing.JSlider jSlider4;
     private javax.swing.JSlider jSlider5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
