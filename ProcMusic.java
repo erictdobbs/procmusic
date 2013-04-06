@@ -55,6 +55,9 @@ public class ProcMusic extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jSlider4 = new javax.swing.JSlider();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jSlider7 = new javax.swing.JSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,7 +199,7 @@ public class ProcMusic extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(jSlider4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -205,6 +208,28 @@ public class ProcMusic extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jSlider4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jLabel8.setText("Eccentricity");
+
+        jSlider7.setValue(20);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jSlider7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jSlider7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -218,8 +243,10 @@ public class ProcMusic extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,6 +258,8 @@ public class ProcMusic extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -373,7 +402,7 @@ public class ProcMusic extends javax.swing.JFrame {
         }
         return song;
     }
-    
+    /*
     int[] doubleFineness(int[] arrayIn) {
         int[] arrayOut = new int[arrayIn.length * 2];
         for (int ii=0; ii<arrayIn.length; ii++) {
@@ -405,10 +434,6 @@ public class ProcMusic extends javax.swing.JFrame {
                     notes[ii] = randChoice(1,3,5,8);
                     if(ii != 0 & ii < notes.length - 1) {
                         if(notes[ii-1] != -1 & notes[ii+1] != -1) {
-                            /*int min = notes[ii-1] < notes[ii+1] ? notes[ii-1] : notes[ii+1];
-                            int max = notes[ii-1] > notes[ii+1] ? notes[ii-1] : notes[ii+1];
-                            if (min > 1) min -= 1;
-                            if (max < 8) max += 1;*/
                             notes[ii] = randNum(Math.min(notes[ii-1],notes[ii+1])-1,
                                     Math.max(notes[ii-1],notes[ii+1])+1);
                         }
@@ -429,7 +454,7 @@ public class ProcMusic extends javax.swing.JFrame {
         System.out.format(rhythm + " %.3f\n", calcSyncopation(rhythm));
         return rhythm + "|";
     }
-    
+    */
     double calcSyncopation(String rhythm) {
         int syncCount = 0, compareCount = 0;
             for (int syncLevel = 1; syncLevel<rhythm.length(); syncLevel*=2) {
@@ -527,8 +552,16 @@ public class ProcMusic extends javax.swing.JFrame {
         return song;
     }
     
+    char iToC(int ii) {
+        return Character.forDigit(ii, 10); 
+    }
+    int cToI(char c) {
+        return Character.getNumericValue(c);
+    }
+    
     String randMeasure(int[] scale) {
         double syncopation = jSlider5.getValue()/100.0;
+        double eccentricity = jSlider7.getValue()/100.0;
         double density = jSlider4.getValue()/100.0;
         int granularity = jSlider3.getValue();
         char[] rhythm = new char[(int)(Math.pow(2, granularity-1))];
@@ -542,9 +575,36 @@ public class ProcMusic extends javax.swing.JFrame {
                 rhythm[ii] = '0';
             if(Math.random() < density && Math.random() < syncopation)
                 rhythm[ii+1] = '0';
-        }
-        
-        // Next, locate sets of at least 3 adjacent notes to create runs
+        } // At this point, rhythm looks like: 00--0-0- or 0-000-00
+        System.out.println(new String(rhythm));
+        for(int ii=0; ii<rhythm.length; ii++) 
+            if (rhythm[ii]=='0') {
+                rhythm[ii] = iToC(randChoice(1,3,5,8));
+                break;
+            }
+        System.out.println(new String(rhythm));
+        for(int ii=rhythm.length-1; ii>0; ii--) 
+            if (rhythm[ii]=='0') {
+                rhythm[ii] = iToC(randChoice(1,3,5,8));
+                break;
+            }
+        System.out.println(new String(rhythm));
+        for(int ii=0; ii<rhythm.length; ii++) 
+            if (rhythm[ii]=='0' & Math.random() > eccentricity)
+                rhythm[ii] = iToC(randChoice(1,3,5,8));
+        System.out.println(new String(rhythm));
+        for(int ii=0; ii<rhythm.length; ii++) 
+            if (rhythm[ii]=='0') {
+                int prev = 1;
+                int next = 8;
+                for(int jj=0; jj<ii; jj++) if(rhythm[jj] != '-') prev = cToI(rhythm[jj]);
+                for(int jj=rhythm.length-1; jj>ii; jj--) if(rhythm[jj] != '-') next = cToI(rhythm[jj]);
+                rhythm[ii] = iToC(randNum(prev,next));
+            }
+        System.out.println(new String(rhythm));
+        //for(int ii=0; ii<rhythm.length; ii++)
+        //    rhythm[ii] = iToC(randChoice(1,3,5,8));
+        /*// Next, locate sets of at least 3 adjacent notes to create runs
         // like 123 121 321 323 343 345 865 565 878
         for(int ii=0; ii<rhythm.length - 3; ii++) {
             if(rhythm[ii]=='0' & rhythm[ii+1]=='0' & rhythm[ii+2]=='0') {
@@ -559,9 +619,7 @@ public class ProcMusic extends javax.swing.JFrame {
                 rhythm[ii+1] = Character.forDigit(note2, 10); 
                 rhythm[ii+2] = Character.forDigit(note3, 10); 
             }
-        }
-        
-        // Repeat, but on a scale twice the previous length
+        } // Repeat, but on a scale twice the previous length
         for(int ii=0; ii<rhythm.length - 5; ii++) {
             if(rhythm[ii]=='0' & rhythm[ii+2]=='0' & rhythm[ii+4]=='0') {
                 int note1 = randChoice(1,3,5,8);
@@ -575,12 +633,10 @@ public class ProcMusic extends javax.swing.JFrame {
                 rhythm[ii+2] = Character.forDigit(note2, 10); 
                 rhythm[ii+4] = Character.forDigit(note3, 10); 
             }
-        }
-        
-        // Then fill in the missing notes
+        } // Then fill in the missing notes
         for(int ii=0; ii<rhythm.length; ii++) {
             if(rhythm[ii]=='0') rhythm[ii] = Character.forDigit(randChoice(1,3,5,8), 10); 
-        }
+        }*/
         
         String melody = new String(rhythm);
                 
@@ -722,6 +778,8 @@ public class ProcMusic extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -729,12 +787,16 @@ public class ProcMusic extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JSlider jSlider3;
     private javax.swing.JSlider jSlider4;
     private javax.swing.JSlider jSlider5;
+    private javax.swing.JSlider jSlider6;
+    private javax.swing.JSlider jSlider7;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
